@@ -1,7 +1,7 @@
 /*
 Exceeded Requirements:
-1.CSV saving and loading functionality to support Excel compatibility.
-2.Added a mood tracker feature to each entry.
+1.Able to save and load csv files 
+2.Added Mood info with every entry
 */
 
 

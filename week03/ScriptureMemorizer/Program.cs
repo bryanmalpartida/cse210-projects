@@ -1,7 +1,5 @@
 //HideRandomWords() Ensured pressing enter doesnt hide words already hidden
 
-
-
 using System;
 
 class Program
@@ -18,7 +16,7 @@ class Program
 
             if (scripture.IsCompletelyHidden())
             {
-                Console.WriteLine("\nAll words are hidden. Program ending.");
+                Console.WriteLine("\nAll words are hidden. End of program");
                 break;
             }
 

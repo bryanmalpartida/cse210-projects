@@ -2,7 +2,7 @@ using System;
 
 namespace EternalQuest
 {
-    // Base class for all goals
+    
     abstract class Goal
     {
         public string Name { get; set; }

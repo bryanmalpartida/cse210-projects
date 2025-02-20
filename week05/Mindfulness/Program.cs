@@ -1,3 +1,6 @@
+//No repeated prompts or questions on reflection activity
+//added a different animation for the breathing activity
+
 using System;
 
 namespace MindfulnessProgram

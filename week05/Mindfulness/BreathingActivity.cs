@@ -11,14 +11,22 @@ namespace MindfulnessProgram
         public override void Run()
         {
             Start();
-            int remainingTime = Duration;
-            while (remainingTime > 0)
+             int remainingTime = Duration;
+             while (remainingTime > 0)
+             {
+             Console.WriteLine("Breathe in...");
+             for (int i = 1; i <= 5; i++)
+             {
+            Console.WriteLine(new string('*', i));
+            Thread.Sleep(500); 
+            }
+            Console.WriteLine("Breathe out...");
+            for (int i = 5; i >= 1; i--)
             {
-                Console.WriteLine("Breathe in...");
-                ShowCountdown(3);
-                Console.WriteLine("Breathe out...");
-                ShowCountdown(3);
-                remainingTime -= 6;
+            Console.WriteLine(new string('*', i));
+            Thread.Sleep(500); // 
+            }
+            remainingTime -= 5;
             }
             End();
         }

@@ -26,6 +26,8 @@ namespace MindfulnessProgram
             "How can you keep this experience in mind in the future?"
         };
 
+        private List<string> _usedQuestions = new List<string>();
+
         public ReflectionActivity() : base("Reflection", "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life.")
         {
         }
@@ -33,18 +35,32 @@ namespace MindfulnessProgram
         public override void Run()
         {
             Start();
-            Random random = new Random();
-            Console.WriteLine(_prompts[random.Next(_prompts.Count)]);
-            ShowSpinner(3);
+             Random random = new Random();
+             Console.WriteLine(_prompts[random.Next(_prompts.Count)]);
+             ShowSpinner(3);
 
-            int remainingTime = Duration;
-            while (remainingTime > 0)
-            {
-                Console.WriteLine(_questions[random.Next(_questions.Count)]);
-                ShowSpinner(5);
-                remainingTime -= 5;
-            }
+             int remainingTime = Duration;
+             while (remainingTime > 0)
+             {
+             if (_usedQuestions.Count == _questions.Count)
+             {
+            _usedQuestions.Clear();
+             }
+
+             string question;
+             do
+             {
+             question = _questions[random.Next(_questions.Count)];
+             } while (_usedQuestions.Contains(question));
+
+             _usedQuestions.Add(question);
+             Console.WriteLine(question);
+             ShowSpinner(5);
+             remainingTime -= 5;
+             }
             End();
         }
+
+        
     }
 }

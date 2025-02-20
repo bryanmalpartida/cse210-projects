@@ -1,3 +1,5 @@
+//The program calculates the users level based on their total score
+//The program has 3 types of goals
 using System;
 
 namespace EternalQuest
